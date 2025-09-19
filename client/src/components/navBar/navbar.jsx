@@ -4,9 +4,10 @@ import './navbar.css'
 export default function Navbar() {
 
     return (
-        <nav className="navbar">
+        <nav className="navbar">    
             <Link to="/">Home</Link>
             <Link to="/cards">Cards</Link>
+            <Link to="/wallet">Wallet</Link>
         </nav>
     )
 }
