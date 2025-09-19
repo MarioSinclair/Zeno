@@ -1,0 +1,3 @@
+# Zeno Credit Card Recommendation System Requirements
+dataclasses-json>=0.6.0
+typing-extensions>=4.0.0
