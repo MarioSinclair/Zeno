@@ -1,21 +1,20 @@
-import { useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/navBar/navbar.jsx'
+import Home from './home.jsx'
+import Cards from './cards.jsx'
 import './App.css'
 
 function App() {
-
   return (
-    <>
-      <div>
-      </div>
-      <h1>Zeno - Smart Credit Card Recommendations</h1>
-      <div className="card">
-       
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      
-    </>
+    <div className="app">
+      <Navbar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cards" element={<Cards />} />
+        </Routes>
+      </main>
+    </div>
   )
 }
 
