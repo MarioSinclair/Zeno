@@ -29,7 +29,3 @@ Zeno is a smart credit card recommendation app that helps users maximize rewards
 **Other Tools:**
 - Deployment: Vercel
 
----
-
-## **Architecture**
-
