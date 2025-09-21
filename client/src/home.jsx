@@ -43,24 +43,31 @@ export default function Home() {
       cards: [
         {
           name: 'American Express Gold Card',
-          image: '',
+          image: '/cards/amex-gold-card.avif',
           description: '4x points on dining and groceries, plus dining credits',
           cashback: '4x Points',
           annualFee: '$250'
         },
         {
           name: 'American Express Platinum',
-          image: '',
+          image: '/cards/amex-platinum-card.avif',
           description: 'Premium card with extensive travel benefits and credits',
           cashback: '5x Points',
           annualFee: '$695'
         },
         {
           name: 'Blue Cash Preferred',
-          image: '',
+          image: '/cards/amex-blue-cash-preferred.avif',
           description: '6% cash back on groceries and streaming services',
           cashback: '6% Cash',
           annualFee: '$95'
+        },
+        {
+          name: 'Blue Cash EveryDay',
+          image: '/cards/amex-blue-cash-everyday.avif',
+          description: '3% cash back at U.S. supermarkets, online retail, and gas stations (up to $6,000/year each), then 1%.',
+          cashback: '3% Cash',
+          annualFee: '$0'
         }
       ]
     },
@@ -69,61 +76,104 @@ export default function Home() {
       cards: [
         {
           name: 'Venture X Rewards',
-          image: '',
+          image: '/cards/c1-venture-x.avif',
           description: '2x miles on all purchases, plus premium travel benefits',
           cashback: '2x Miles',
           annualFee: '$395'
         },
         {
           name: 'Venture Rewards',
-          image: '',
+          image: '/cards/c1-venture.avif',
           description: '2x miles on every purchase, every day',
           cashback: '2x Miles',
           annualFee: '$95'
         },
         {
+          name: 'VentureOne Rewards',
+          image: '/cards/c1-ventureone.avif',
+          description: '1.25x miles on every purchase, every day',
+          cashback: '1.25x Miles',
+          annualFee: '$0'
+        },
+        {
           name: 'SavorOne Cash Rewards',
-          image: '',
+          image: '/cards/c1-savor.avif',
           description: '3% cash back on dining, entertainment, and groceries',
           cashback: '3% Cash',
           annualFee: '$0'
+        },
+        {
+          name: 'Quicksilver Cash Rewards',
+          image: '/cards/c1-quicksilver.avif',
+          description: 'Unlimited 1.5% cash back on every purchase, every day',
+          cashback: '1.5% Cash',
+          annualFee: '$0'
         }
+        
       ]
     },
     {
       name: "Citi",
       cards: [
         {
+          name: 'Citi Strata Elite',
+          image: '/cards/citi-strata-elite.png',
+          description: 'Premium travel card with airport lounge access and travel credits',
+          cashback: '3x Points',
+          annualFee: '$550'
+        },
+        {
+          name: 'Citi Strata Premier',
+          image: '/cards/citi-premier.png',
+          description: 'High-tier travel card with premium benefits and enhanced rewards',
+          cashback: '3x Points',
+          annualFee: '$395'
+        },
+        {
+          name: 'Citi Strata',
+          image: '/cards/citi-strata.png',
+          description: 'Mid-tier travel card with enhanced rewards and benefits',
+          cashback: '2x Points',
+          annualFee: '$95'
+        },
+        {
           name: 'Citi Double Cash',
-          image: '',
+          image: '/cards/citi-double-cash.png',
           description: 'Earn 2% cash back on all purchases',
           cashback: '2% Cash',
           annualFee: '$0'
         },
-        {
-          name: 'Citi Premier',
-          image: '',
-          description: '3x points on travel, gas, restaurants, and supermarkets',
-          cashback: '3x Points',
-          annualFee: '$95'
-        }
       ]
     },
     {
       name: "Wells Fargo",
       cards: [
         {
-          name: 'Active Cash',
-          image: '',
-          description: 'Earn unlimited 2% cash rewards on purchases',
-          cashback: '2% Cash',
-          annualFee: '$0'
+          name: 'Autograph Journey',
+          image: '/cards/wf-autograph-journey.png',
+          description: '5x points on hotels, 4x points on airlines, 3x points on travel and restaurants',
+          cashback: '5x Points',
+          annualFee: '$95'
         },
         {
           name: 'Autograph',
-          image: '',
-          description: '3x points on restaurants, travel, gas, and transit',
+          image: '/cards/wf-autograph.png',
+          description: '3x points on restaurants, travel, gas stations, transit, streaming, and phone plans',
           cashback: '3x Points',
+          annualFee: '$0'
+        },
+        {
+          name: 'Bilt Mastercard',
+          image: '/cards/wf-bilt.png',
+          description: 'Earn points on rent and everyday purchases with no annual fee',
+          cashback: '1x Points',
+          annualFee: '$0'
+        },
+        {
+          name: 'Active Cash',
+          image: '/cards/wf-active-cash.png',
+          description: 'Earn unlimited 2% cash rewards on purchases',
+          cashback: '2% Cash',
           annualFee: '$0'
         }
       ]
@@ -133,15 +183,22 @@ export default function Home() {
       cards: [
         {
           name: 'Premium Rewards',
-          image: '',
+          image: '/cards/bofa-premium-rewards.png',
           description: '2x points on travel and dining, 1.5x on all other purchases',
           cashback: '2x Points',
           annualFee: '$95'
         },
         {
-          name: 'Cash Rewards',
-          image: '',
-          description: '3% cash back in your choice category, 2% at grocery stores',
+          name: 'Unlimited Cash Rewards',
+          image: '/cards/bofa-unlimited-cash.png',
+          description: 'Unlimited 2% cash back for the first year from account opening, then unlimited 1.5% cash back on all purchases',
+          cashback: '1.5% Cash',
+          annualFee: '$0'
+        },
+        {
+          name: 'Customized Cash Rewards',
+          image: '/cards/bofa-customized-cash.png',
+          description: '3% cash back in your choice category, 2% at grocery stores, 1% on all other purchases',
           cashback: '3% Cash',
           annualFee: '$0'
         }
