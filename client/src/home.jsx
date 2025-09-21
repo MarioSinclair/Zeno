@@ -1,5 +1,6 @@
 import CardComponent from './components/card/cardComponent.jsx'
 import './Home.css'
+import { Slide } from "react-awesome-reveal";
 
 // Cache busting timestamp
 const CACHE_BUST = Date.now();
@@ -222,18 +223,26 @@ export default function Home() {
           <div className="hero-gradient"></div>
         </div>
         <div className="hero-content">
-          <h1 className="hero-title">
-            Build your portfolio from a single app, designed for the forward-thinking investor.
-          </h1>
+          <Slide cascade damping={0.01} direction='None' triggerOnce>
+            <h1 className="hero-title">
+              Build your portfolio from a single app, designed for the forward-thinking investor.
+            </h1>
+          </Slide>
           <div className="hero-actions">
-            <button className="hero-button primary-button">Get Started</button>
+            <button 
+            className="hero-button primary-button" 
+            onClick={() => {
+              document.getElementById('bank-navigation').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+            >
+            Get Started</button>
             <button className="hero-button secondary-button">Learn More</button>
           </div>
         </div>
       </section>
 
       {/* Bank Navigation */}
-      <section className="bank-navigation">
+      <section className="bank-navigation" id="bank-navigation">
         <div className="container">
           <div className="navigation-header">
             <h2>Browse by Bank</h2>
