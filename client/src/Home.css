@@ -40,7 +40,7 @@
   position: relative;
   z-index: 1;
   max-width: 800px;
-  margin: 0;
+  margin: auto;
 }
 
 .hero-badge {
@@ -90,14 +90,11 @@
 }
 
 .hero-button.primary-button {
-  background: var(--primary-black);
-  color: var(--primary-white);
   box-shadow: var(--shadow-sm);
 }
 
 .hero-button.primary-button:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
 }
 
 .hero-button.secondary-button {

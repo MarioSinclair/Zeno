@@ -98,24 +98,19 @@ button:focus-visible {
 }
 
 .secondary-button {
-  background: transparent;
   color: var(--text-primary);
-  border: 2px solid var(--border-color);
+  border: 2px solid transparent;
 }
 
 .secondary-button:hover {
-  background: var(--background-secondary);
   border-color: var(--accent-cyan);
 }
 
 .primary-button {
   background: var(--accent-cyan);
   color: var(--primary-black);
-  box-shadow: 0 2px 8px rgba(0, 212, 170, 0.3);
 }
 
 .primary-button:hover {
-  background: var(--accent-cyan-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 212, 170, 0.4);
 }
