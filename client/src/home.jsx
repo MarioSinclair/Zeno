@@ -1,6 +1,7 @@
 import CardComponent from './components/card/cardComponent.jsx'
 import './Home.css'
 import { Slide } from "react-awesome-reveal";
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   
@@ -282,13 +283,9 @@ export default function Home() {
             </h1>
           </Slide>
           <div className="hero-actions">
-            <button 
-            className="hero-button primary-button" 
-            onClick={() => {
-              document.getElementById('bank-navigation').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }}
-            >
-            Get Started</button>
+            <Link to="/signup" className="hero-button primary-button">
+              Get Started
+            </Link>
             <button className="hero-button secondary-button">Learn More</button>
           </div>
         </div>

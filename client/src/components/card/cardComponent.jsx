@@ -30,7 +30,7 @@ export default function CardComponent({ cardName, cardImage, cardDescription, ca
                             <h3 className="card-name">{cardName}</h3>
                             <p className="card-description">{cardDescription}</p>
                             <button className="card-button primary-button">
-                                Add to Wallet
+                                Learn More
                             </button>
                         </div>
                     </div>
@@ -63,7 +63,7 @@ export default function CardComponent({ cardName, cardImage, cardDescription, ca
                         </div>
                         
                         <button className="card-button">
-                            Learn More
+                            Add to Wallet
                         </button> 
                     </div>  
                 </div>
