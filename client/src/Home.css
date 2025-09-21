@@ -221,6 +221,7 @@
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  align-items: start;
   gap: 2rem;
   margin-top: 0;
 }
@@ -311,10 +312,6 @@
     font-size: 2rem;
   }
   
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-  
   .features-grid {
     grid-template-columns: 1fr;
   }
@@ -329,12 +326,6 @@
   
   .bank-name {
     font-size: 1.5rem;
-  }
-  
-  .card-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    min-width: 300px;
   }
   
   .bank-navigation {

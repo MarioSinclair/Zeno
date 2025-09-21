@@ -4,14 +4,11 @@
     border: 2px solid var(--primary-black);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
-    overflow: hidden;
+    height: 500px;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    min-height: 400px;
     position: relative;
     cursor: pointer;
-    perspective: 1000px;
 }
 
 .card-component:hover {
@@ -44,19 +41,18 @@
     flex-direction: column;
 }
 
-.card-back {
-    transform: rotateY(180deg);
-    background: var(--primary-white);
+
+.card-header, .card-lower{
+    height: 50%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.card-header {
-    padding: 1.5rem 1.5rem 0;
-}
 
 .card-image-container {
-    width: 100%;
-    height: 180px;
     border-radius: 12px;
+    padding: 1rem;
     overflow: hidden;
     background: var(--background-secondary);
     display: flex;
@@ -71,9 +67,6 @@
     transition: transform 0.3s ease;
 }
 
-.card-component:hover .card-image {
-    transform: scale(1.05);
-}
 
 .card-image-placeholder {
     width: 100%;
@@ -102,16 +95,12 @@
     line-height: 1.3;
 }
 
-.card-component:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-    border-color: var(--primary-black);
-}
 
 .card-content {
     padding: 2rem;
-    flex: 1;
     display: flex;
+    flex: 1;
+    justify-content: space-between;
     flex-direction: column;
 }
 
@@ -119,7 +108,6 @@
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-black);
-    margin-bottom: 1rem;
     line-height: 1.3;
     letter-spacing: -0.01em;
 }
@@ -127,9 +115,6 @@
 .card-description {
     color: var(--text-secondary);
     font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    flex: 1;
 }
 
 .card-features {
@@ -164,24 +149,12 @@
     color: var(--primary-black);
 }
 
-.card-footer {
-    padding: 0 2rem 2rem;
-}
-
 .card-button {
-    width: 100%;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 12px;
-    border: none;
     cursor: pointer;
-    transition: all 0.2s ease;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-family: inherit;
     letter-spacing: 0.02em;
 }
 
@@ -198,10 +171,19 @@
 }
 
 /* Card Back Styles */
-.card-back-header {
-    padding: 1.5rem 1.5rem 0;
-    text-align: center;
+.card-back {
+    transform: rotateY(180deg);
+    background: var(--primary-white);
 }
+
+.card-back-content {
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 
 .card-back-name {
     font-size: 1.25rem;
@@ -209,21 +191,6 @@
     color: var(--primary-black);
     margin-bottom: 1rem;
     line-height: 1.3;
-}
-
-.card-back-image {
-    width: 100%;
-    height: 120px;
-    border-radius: 8px;
-    overflow: hidden;
-    background: var(--background-secondary);
-    margin-bottom: 1rem;
-}
-
-.card-back-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 
 .card-back-placeholder {
@@ -243,13 +210,6 @@
     margin: 0;
 }
 
-.card-back-content {
-    padding: 0 1.5rem;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
 
 .detail-section {
     text-align: left;
@@ -259,22 +219,23 @@
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--primary-black);
-    margin-bottom: 0.5rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    margin: 0;
 }
 
 .rewards-text, .fee-text {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--primary-black);
-    margin-bottom: 0.25rem;
+    margin: 0;
 }
 
 .rewards-description {
     font-size: 0.85rem;
     color: var(--text-secondary);
     line-height: 1.4;
+    margin: 0;
 }
 
 .benefits-list {
@@ -299,17 +260,6 @@
     font-weight: 600;
 }
 
-.card-back-footer {
-    padding: 0 1.5rem 1.5rem;
-    display: flex;
-    gap: 0.75rem;
-}
-
-.card-back-footer .card-button {
-    flex: 1;
-    padding: 0.75rem 1rem;
-    font-size: 0.85rem;
-}
 
 /* Mobile responsiveness for flip cards */
 @media (max-width: 768px) {

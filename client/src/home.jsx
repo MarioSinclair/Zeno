@@ -2,11 +2,7 @@ import CardComponent from './components/card/cardComponent.jsx'
 import './Home.css'
 import { Slide } from "react-awesome-reveal";
 
-// Cache busting timestamp
-const CACHE_BUST = Date.now();
-
 export default function Home() {
-  console.log('Home component loaded with cache bust:', CACHE_BUST);
   
   const banksData = [
     {
@@ -14,28 +10,28 @@ export default function Home() {
       cards: [
         {
           name: 'Chase Sapphire Preferred',
-          image: './images/Chase Sapphire Preferred.png',
+          image: '/cards/sapphire_preferred.png',
           description: 'Earn 2x points on travel and dining, plus 60,000 bonus points',
           cashback: '2x Points',
           annualFee: '$95'
         },
         {
           name: 'Chase Sapphire Reserve',
-          image: '',
+          image: '/cards/sapphire_reserve.png',
           description: 'Premium travel card with airport lounge access and travel credits',
           cashback: '3x Points',
           annualFee: '$550'
         },
         {
           name: 'Chase Freedom Unlimited',
-          image: '',
+          image: '/cards/freedom_unlimited.png',
           description: 'Earn unlimited 1.5% cash back on all purchases',
           cashback: '1.5% Cash',
           annualFee: '$0'
         },
         {
           name: 'Chase Freedom Flex',
-          image: '',
+          image: '/cards/freedom_flex.png',
           description: 'Earn 5% cash back on rotating categories',
           cashback: '5% Cash',
           annualFee: '$0'
