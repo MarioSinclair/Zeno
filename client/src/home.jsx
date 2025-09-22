@@ -1,11 +1,13 @@
 import CardComponent from './components/card/cardComponent.jsx'
 import { useCards } from './hooks/useCards';
+import { useAuth } from './hooks/useAuth';
 import './Home.css'
 import { Slide } from "react-awesome-reveal";
 import { Link } from 'react-router-dom';
 
 export default function Home() {
   const { cards, loading, error } = useCards();
+  const { user } = useAuth();
   
   // Group cards by bank for display
   const banksData = cards.reduce((acc, card) => {
@@ -36,17 +38,42 @@ export default function Home() {
           <div className="hero-gradient"></div>
         </div>
         <div className="hero-content">
-          <Slide cascade damping={0.01} direction='None' triggerOnce>
-            <h1 className="hero-title">
-            One tap, maximum back! Instantly see which card gives you the most cashback or points.
-            </h1>
-          </Slide>
-          <div className="hero-actions">
-            <Link to="/signup" className="hero-button primary-button">
-              Get Started
-            </Link>
-            <button className="hero-button secondary-button">Learn More</button>
-          </div>
+          {user ? (
+            // Logged-in user dashboard
+            <div className="dashboard-welcome">
+              <Slide cascade damping={0.01} direction='None' triggerOnce>
+                <h1 className="hero-title">
+                  Welcome back, {user.displayName || user.email?.split('@')[0]}! 👋
+                </h1>
+                <p className="hero-subtitle">
+                  Ready to maximize your rewards? Let's find your best card for today's purchases.
+                </p>
+              </Slide>
+              <div className="hero-actions">
+                <Link to="/wallet" className="hero-button primary-button">
+                  Go to Wallet
+                </Link>
+                <Link to="/cards" className="hero-button secondary-button">
+                  Browse Cards
+                </Link>
+              </div>
+            </div>
+          ) : (
+            // Marketing page for non-logged-in users
+            <div className="marketing-welcome">
+              <Slide cascade damping={0.01} direction='None' triggerOnce>
+                <h1 className="hero-title">
+                  One tap, maximum back! Instantly see which card gives you the most cashback or points.
+                </h1>
+              </Slide>
+              <div className="hero-actions">
+                <Link to="/signup" className="hero-button primary-button">
+                  Get Started
+                </Link>
+                <button className="hero-button secondary-button">Learn More</button>
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

@@ -25,9 +25,8 @@ export default function Navbar() {
                 
                 <div className="navbar-menu">
                     <Link to="/" className="nav-link">Personal</Link>
-                    <Link to="/cards" className="nav-link">Business</Link>
-                    <Link to="/wallet" className="nav-link">Markets</Link>
-                    <Link to="/wallet" className="nav-link">Company</Link>
+                    <Link to="/cards" className="nav-link">Wallet</Link>
+                    <Link to="/wallet" className="nav-link">About</Link>
                 </div>
                 
                 <div className="navbar-actions">
