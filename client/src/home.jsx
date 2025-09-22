@@ -279,7 +279,7 @@ export default function Home() {
         <div className="hero-content">
           <Slide cascade damping={0.01} direction='None' triggerOnce>
             <h1 className="hero-title">
-              Build your portfolio from a single app, designed for the forward-thinking investor.
+            One tap, maximum back! Instantly see which card gives you the most cashback or points.
             </h1>
           </Slide>
           <div className="hero-actions">
