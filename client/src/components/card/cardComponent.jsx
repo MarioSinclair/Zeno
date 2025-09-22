@@ -1,11 +1,63 @@
 import { useState } from 'react'
+import { useWallet } from '../../hooks/useWallet'
+import { useAuth } from '../../hooks/useAuth'
 import './cardComponent.css'
 
-export default function CardComponent({ cardName, cardImage, cardDescription, cashback, annualFee }) {
+export default function CardComponent({ 
+  cardName, 
+  cardImage, 
+  cardDescription, 
+  cashback, 
+  annualFee, 
+  cardId, 
+  bank 
+}) {
     const [isFlipped, setIsFlipped] = useState(false);
+    const [isAdding, setIsAdding] = useState(false);
+    const [addStatus, setAddStatus] = useState(null);
+    
+    const { user } = useAuth();
+    const { addToWallet } = useWallet();
 
     const handleCardClick = () => {
         setIsFlipped(!isFlipped);
+    };
+
+    const handleAddToWallet = async (e) => {
+        e.stopPropagation(); // Prevent card flip
+        
+        if (!user) {
+            setAddStatus('Please log in to add cards to your wallet');
+            return;
+        }
+
+        setIsAdding(true);
+        setAddStatus(null);
+
+        const cardData = {
+            id: cardId || `${bank}-${cardName.toLowerCase().replace(/\s+/g, '-')}`,
+            name: cardName,
+            bank: bank,
+            annualFee: annualFee,
+            cashback: cashback,
+            description: cardDescription,
+            image: cardImage
+        };
+
+        const result = await addToWallet(cardData);
+        
+        if (result.success) {
+            setAddStatus('Card added to wallet!');
+        } else {
+            setAddStatus(result.error);
+        }
+        
+        setIsAdding(false);
+        
+        // Clear status after 3 seconds
+        setTimeout(() => {
+            setAddStatus(null);
+        }, 3000);
     };
 
     return (
@@ -62,9 +114,19 @@ export default function CardComponent({ cardName, cardImage, cardDescription, ca
                             </ul>
                         </div>
                         
-                        <button className="card-button">
-                            Add to Wallet
-                        </button> 
+                        <button 
+                            className="card-button"
+                            onClick={handleAddToWallet}
+                            disabled={isAdding}
+                        >
+                            {isAdding ? 'Adding...' : 'Add to Wallet'}
+                        </button>
+                        
+                        {addStatus && (
+                            <div className={`add-status ${addStatus.includes('added') ? 'success' : 'error'}`}>
+                                {addStatus}
+                            </div>
+                        )} 
                     </div>  
                 </div>
             </div>

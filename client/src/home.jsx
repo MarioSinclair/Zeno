@@ -17,11 +17,13 @@ export default function Home() {
       };
     }
     acc[bankName].cards.push({
+      id: card.id,
       name: card.name,
       image: card.image,
       description: card.description,
       cashback: card.cashback,
-      annualFee: card.annualFee
+      annualFee: card.annualFee,
+      bank: bankName
     });
     return acc;
   }, {});
@@ -93,7 +95,7 @@ export default function Home() {
           ) : banksArray.length === 0 ? (
             <div className="no-cards-message">
               <p>No credit cards found. Please add some cards to Firestore.</p>
-            </div>
+      </div>
           ) : (
             banksArray.map((bank) => {
             const bankId = `bank-${bank.name.toLowerCase().replace(/\s+/g, '-')}`;
@@ -101,8 +103,8 @@ export default function Home() {
               <div key={bank.name} id={bankId} className="bank-section">
                 <div className="bank-header">
                   <h3 className="bank-name">{bank.name}</h3>
-                </div>
-                
+      </div>
+      
                 <div className="card-grid">
                   {bank.cards.map((card, index) => (
                     <CardComponent 
@@ -112,6 +114,8 @@ export default function Home() {
                       cardDescription={card.description}
                       cashback={card.cashback}
                       annualFee={card.annualFee}
+                      cardId={card.id}
+                      bank={card.bank}
                     />
                   ))}
                 </div>
