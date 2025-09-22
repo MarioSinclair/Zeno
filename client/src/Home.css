@@ -69,6 +69,41 @@
   font-weight: 400;
 }
 
+/* Dashboard Welcome Styles */
+.dashboard-welcome {
+  text-align: center;
+}
+
+.dashboard-welcome .hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary-black);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.dashboard-welcome .hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dashboard-welcome .hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.marketing-welcome {
+  text-align: left;
+}
+
 .hero-actions {
   display: flex;
   gap: 1rem;

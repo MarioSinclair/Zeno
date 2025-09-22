@@ -25,8 +25,13 @@ export default function Navbar() {
                 
                 <div className="navbar-menu">
                     <Link to="/" className="nav-link">Personal</Link>
+<<<<<<< HEAD
                     <Link to="/wallet" className="nav-link">Wallet</Link>
                     <Link to="/about" className="nav-link">About</Link>
+=======
+                    <Link to="/cards" className="nav-link">Wallet</Link>
+                    <Link to="/wallet" className="nav-link">About</Link>
+>>>>>>> 17767d0fb639bb59734d99aac49c5ceec804a935
                 </div>
                 
                 <div className="navbar-actions">
